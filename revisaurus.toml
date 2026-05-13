@@ -1,0 +1,22 @@
+output_dir = "site-dist"
+data_dir = ".revisaurus/data"
+max_pull_requests = 2
+skipped_authors = ["renovate", "renovate[bot]", "dependabot", "dependabot[bot]"]
+
+[reviewer]
+kind = "kiro"
+command = "kiro-cli"
+trust_tools = "read,grep"
+timeout_seconds = 900
+
+[[repositories]]
+name = "release-plz"
+provider = "github"
+url = "https://github.com/release-plz/release-plz"
+max_pull_requests = 2
+
+[[repositories]]
+name = "gigi"
+provider = "github"
+url = "https://github.com/marcoieni/gigi"
+max_pull_requests = 2
