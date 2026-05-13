@@ -13,7 +13,7 @@ timeout_seconds = 900
 name = "release-plz"
 provider = "github"
 url = "https://github.com/release-plz/release-plz"
-max_pull_requests = 2
+max_pull_requests = 10
 
 [[repositories]]
 name = "gigi"
