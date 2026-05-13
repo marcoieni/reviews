@@ -15,6 +15,27 @@ The Revisaurus configuration lives in [`revisaurus.toml`](revisaurus.toml). It s
 
 Generated review state is cached between workflow runs under `.revisaurus/data` so unchanged PR head commits are not reviewed again.
 
+## Build Locally
+
+Use Node.js 24 or newer and pnpm 11. The local scripts clone Revisaurus into `.revisaurus/revisaurus`, install its dependencies, generate the review data, and build the static Astro site into `site-dist`.
+
+```bash
+pnpm run revisaurus:install
+GITHUB_TOKEN=... KIRO_API_KEY=... pnpm generate
+```
+
+To preview the generated site locally:
+
+```bash
+pnpm dev
+```
+
+The preview server prints the localhost URL, usually `http://127.0.0.1:4321`.
+
+To rebuild the static site from existing `.revisaurus/data/site.json` without fetching or reviewing pull requests again, run `pnpm build`. To try the site without credentials, run `pnpm demo`.
+
+`GITHUB_TOKEN` needs read access to the configured repositories and pull requests. `KIRO_API_KEY` is required by Kiro CLI headless mode. Generated review state is written to `.revisaurus/data`, and the static website output is written to `site-dist`; both are ignored by git.
+
 ## TODO
 
 - [x] In the repository settings, go to **Settings -> Pages** and set **Build and deployment -> Source** to **GitHub Actions**.
