@@ -1,5 +1,13 @@
 {
   "name": "pr-review-dashboard",
   "private": true,
-  "packageManager": "pnpm@10.24.0"
+  "packageManager": "pnpm@11.1.1",
+  "scripts": {
+    "revisaurus:checkout": "mkdir -p .revisaurus && (test -d .revisaurus/revisaurus/.git && git -C .revisaurus/revisaurus pull --ff-only || git clone https://github.com/marcoieni/revisaurus.git .revisaurus/revisaurus)",
+    "revisaurus:install": "pnpm run revisaurus:checkout && pnpm --dir .revisaurus/revisaurus install",
+    "generate": "./.revisaurus/revisaurus/node_modules/.bin/tsx ./.revisaurus/revisaurus/src/cli/index.ts generate --config revisaurus.toml",
+    "demo": "./.revisaurus/revisaurus/node_modules/.bin/tsx ./.revisaurus/revisaurus/src/cli/index.ts demo",
+    "dev": "REVISAURUS_DATA_DIR=.revisaurus/data REVISAURUS_OUTPUT_DIR=$PWD/site-dist REVISAURUS_WORKSPACE=$PWD pnpm --dir .revisaurus/revisaurus exec astro dev --host 127.0.0.1",
+    "build": "REVISAURUS_DATA_DIR=.revisaurus/data REVISAURUS_OUTPUT_DIR=$PWD/site-dist REVISAURUS_WORKSPACE=$PWD pnpm --dir .revisaurus/revisaurus exec astro build"
+  }
 }
