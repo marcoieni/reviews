@@ -18,6 +18,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: reviews
     steps:
       - name: Checkout
         uses: actions/checkout@v6
