@@ -17,12 +17,10 @@ Generated review state is cached between workflow runs under `.revisaurus/data` 
 
 ## TODO
 
-- [ ] Create the GitHub repository that will host this project.
-- [ ] Push these files to the default branch.
-- [ ] In the repository settings, go to **Settings -> Pages** and set **Build and deployment -> Source** to **GitHub Actions**.
-- [ ] Create a Kiro API key for headless CLI use.
-- [ ] Add the Kiro API key as a repository secret named `KIRO_API_KEY`.
-- [ ] Confirm that Actions are enabled for the repository.
+- [x] In the repository settings, go to **Settings -> Pages** and set **Build and deployment -> Source** to **GitHub Actions**.
+- [x] Create a Kiro API key for headless CLI use.
+- [x] Add the Kiro API key as a repository secret named `KIRO_API_KEY` under a GitHub environment for extra security.
+- [x] Confirm that Actions are enabled for the repository.
 - [ ] Run the `Revisaurus` workflow manually once from **Actions -> Revisaurus -> Run workflow**.
 - [ ] After the first successful run, open the deployed Pages URL from the workflow summary.
 - [ ] If reviews hit GitHub API rate limits, add a fine-grained GitHub token secret and update the workflow/action configuration once Revisaurus supports overriding the provider token.
