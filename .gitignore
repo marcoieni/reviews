@@ -2,3 +2,4 @@ node_modules/
 .pnpm-store/
 site-dist/
 .revisaurus/
+.revisaur/

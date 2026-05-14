@@ -3,11 +3,11 @@
   "private": true,
   "packageManager": "pnpm@11.1.1",
   "scripts": {
-    "revisaurus:checkout": "mkdir -p .revisaurus && (test -d .revisaurus/revisaurus/.git && git -C .revisaurus/revisaurus pull --ff-only || git clone https://github.com/marcoieni/revisaurus.git .revisaurus/revisaurus)",
-    "revisaurus:install": "pnpm run revisaurus:checkout && pnpm --dir .revisaurus/revisaurus install",
-    "generate": "./.revisaurus/revisaurus/node_modules/.bin/tsx ./.revisaurus/revisaurus/src/cli/index.ts generate --config revisaurus.toml",
-    "demo": "./.revisaurus/revisaurus/node_modules/.bin/tsx ./.revisaurus/revisaurus/src/cli/index.ts demo",
-    "dev": "REVISAURUS_DATA_DIR=.revisaurus/data REVISAURUS_OUTPUT_DIR=$PWD/site-dist REVISAURUS_WORKSPACE=$PWD pnpm --dir .revisaurus/revisaurus exec astro dev --host 127.0.0.1",
-    "build": "REVISAURUS_DATA_DIR=.revisaurus/data REVISAURUS_OUTPUT_DIR=$PWD/site-dist REVISAURUS_WORKSPACE=$PWD pnpm --dir .revisaurus/revisaurus exec astro build"
+    "revisaur:checkout": "mkdir -p .revisaur && (test -d .revisaur/revisaur/.git && git -C .revisaur/revisaur pull --ff-only || git clone https://github.com/marcoieni/revisaur.git .revisaur/revisaur)",
+    "revisaur:install": "pnpm run revisaur:checkout && pnpm --dir .revisaur/revisaur install",
+    "generate": "./.revisaur/revisaur/node_modules/.bin/tsx ./.revisaur/revisaur/src/cli/index.ts generate --config revisaur.toml",
+    "demo": "./.revisaur/revisaur/node_modules/.bin/tsx ./.revisaur/revisaur/src/cli/index.ts demo",
+    "dev": "REVISAUR_DATA_DIR=.revisaur/data REVISAUR_OUTPUT_DIR=$PWD/site-dist REVISAUR_WORKSPACE=$PWD pnpm --dir .revisaur/revisaur exec astro dev --host 127.0.0.1",
+    "build": "REVISAUR_DATA_DIR=.revisaur/data REVISAUR_OUTPUT_DIR=$PWD/site-dist REVISAUR_WORKSPACE=$PWD pnpm --dir .revisaur/revisaur exec astro build"
   }
 }
