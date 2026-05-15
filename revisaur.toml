@@ -21,3 +21,9 @@ name = "gigi"
 provider = "github"
 url = "https://github.com/marcoieni/gigi"
 max_pull_requests = 2
+
+[[repositories]]
+name = "revisaur"
+provider = "github"
+url = "https://github.com/marcoieni/revisaur"
+max_pull_requests = 10
